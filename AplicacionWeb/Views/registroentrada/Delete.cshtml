@@ -1,0 +1,56 @@
+﻿@model AplicacionWeb.registroentrada
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>registroentrada</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fecent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empleado.nomemp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empleado.nomemp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.proveedor.nomprov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.proveedor.nomprov)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

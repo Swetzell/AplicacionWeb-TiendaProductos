@@ -1,0 +1,74 @@
+﻿@model AplicacionWeb.producto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>producto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nompro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nompro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.despro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.despro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prepro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prepro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.canpro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.canpro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estpro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estpro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.categoria.nomcat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.categoria.nomcat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.marca.nommar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.marca.nommar)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.codpro }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

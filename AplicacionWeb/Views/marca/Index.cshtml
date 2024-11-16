@@ -1,0 +1,117 @@
+﻿@model PagedList.IPagedList<AplicacionWeb.marca>
+@using PagedList.Mvc;
+
+@{
+    //cambiando el titulo de la pagina web
+    ViewBag.Title = "Mantenimiento Marca";
+}
+
+@*cambiando el nombe del titulo*@
+<h2>Mantenimiento Marca</h2>
+
+<p>
+    @*cambiando el nombre del link de registro*@
+    @Html.ActionLink("Nueva Marca", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.nommar)*@
+                    Codigo
+                </th>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.estmar)*@
+                    Nombre
+                </th>
+                <th>Estado</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.codmar)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nommar)
+                    </td>
+                    <td>
+                        @*@Html.DisplayFor(modelItem => item.estmar)*@
+                        @if (item.estmar)
+                        {
+
+
+                            <span>Habilitado</span>
+                        }
+                        else
+                        {
+                            <span>Desabilitado</span>
+                        }
+                    </td>
+                    <td>
+                        @Html.ActionLink("Actualizar", "Edit", new { id = item.codmar }, new { @class = "btn btn-success" })
+                    </td>
+                    <td>@Html.ActionLink("Detalles", "Details", new { id = item.codmar }, new { @class = "btn btn-secondary" })</td>
+                    <td>@Html.ActionLink("Eliminar", "Delete", new { id = item.codmar }, new { @class = "btn btn-danger" })</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            @*Para el boton anterior*@
+            @if (Model.HasPreviousPage)
+            {
+                <li class="page-item">
+                    <a class="page-link"
+                       href="@Url.Action("Index", new {page=Model.PageNumber-1})">
+                        Anterior
+                    </a>
+                </li>
+            }
+            else
+            {
+                <li class="page-item disabled"><span class="page-link">Anterior</span></li>
+            }
+
+            @for (int i = 1; i <= Model.PageCount; i++)
+            {
+                if (i == Model.PageNumber)
+                {
+                    <li class="page-item"><span class="page-link">@i</span></li>
+                }
+                else
+                {
+                    <li class="page-item">
+                        <a class="page-link"
+                           href="@Url.Action("Index", new {page=i})">
+                            @i
+                        </a>
+                    </li>
+                }
+            }
+
+            @*Para el boton siguiente*@
+            @if (Model.HasNextPage)
+            {
+                <li class="page-item">
+                    <a class="page-link"
+                       href="@Url.Action("Index", new {page=Model.PageNumber+1})">
+                        Siguiente
+                    </a>
+                </li>
+            }
+            else
+            {
+                <li class="page-item disabled"><span class="page-link">Siguiente</span></li>
+            }
+        </ul>
+    </nav>
+</div>

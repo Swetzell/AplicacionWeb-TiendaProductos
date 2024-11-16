@@ -1,0 +1,82 @@
+﻿@model IEnumerable<AplicacionWeb.empleado>
+
+@{
+    ViewBag.Title = "Mantenimiento Empleado";
+}
+
+<h2>Mantenimiento Empleado</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Empleado", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Documento</th>
+                <th>Dirección</th>
+                <th>Teléfono</th>
+                <th>Celular</th>
+                <th>Correo</th>
+                <th>Estado</th>
+                <th>Distrito</th>
+                <th>Rol</th>
+                <th>Tipo de Documento</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nomemp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.apepemp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.apememp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.docemp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.diremp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.telemp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.celemp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.coremp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.estemp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.distrito.nomdis)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.rol.nomrol)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tipodocumento.nomtipd)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Actualizar", "Edit", new { id = item.codemp }, new { @class = "btn btn-success" })
+                    </td>
+                    <td>@Html.ActionLink("Detalles", "Details", new { id = item.codemp }, new { @class = "btn btn-secondary" })</td>
+                    <td>@Html.ActionLink("Eliminar", "Delete", new { id = item.codemp }, new { @class = "btn btn-danger" })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

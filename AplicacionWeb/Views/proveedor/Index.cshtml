@@ -1,0 +1,66 @@
+﻿@model IEnumerable<AplicacionWeb.proveedor>
+
+@{
+    ViewBag.Title = "Mantenimiento Proveedor";
+}
+
+<h2>Mantenimiento Proveedor</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Proveedor", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>Nombre</th>
+                <th>Representante</th>
+                <th>Dirección</th>
+                <th>Teléfono</th>
+                <th>Celular</th>
+                <th>Correo</th>
+                <th>Estado</th>
+                <th>Distrito</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nomprov)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.repprov)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.dirprov)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.telprov)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.celprov)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.corprov)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.estprov)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.distrito.nomdis)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Actualizar", "Edit", new { id = item.codprov }, new { @class = "btn btn-success" })
+                    </td>
+                    <td>@Html.ActionLink("Detalles", "Details", new { id = item.codprov }, new { @class = "btn btn-secondary" })</td>
+                    <td>@Html.ActionLink("Eliminar", "Delete", new { id = item.codprov }, new { @class = "btn btn-danger" })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

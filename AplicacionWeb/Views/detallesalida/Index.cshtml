@@ -1,0 +1,50 @@
+﻿@model IEnumerable<AplicacionWeb.detallesalida>
+
+@{
+    ViewBag.Title = "Mantenimiento Detalle de Salidas";
+}
+
+<h2>Mantenimiento Detalle de Salidas</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Detalle de Salida", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Producto</th>
+                <th>Registro de Salida</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.canent)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.preent)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.producto.nompro)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.registrosalida.nrosal)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Actualizar", "Edit", new { id = item.nrodetsal }, new { @class = "btn btn-success" })
+                    </td>
+                    <td>@Html.ActionLink("Detalles", "Details", new { id = item.nrodetsal }, new { @class = "btn btn-secondary" })</td>
+                    <td>@Html.ActionLink("Eliminar", "Delete", new { id = item.nrodetsal }, new { @class = "btn btn-danger" })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

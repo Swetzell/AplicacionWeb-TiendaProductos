@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="159e6fb901ed4f24971dbc83eb0e2fcc" Name="Diagram1">
+        <EntityTypeShape EntityType="bdalmaceneslibertad2Model.categoria" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdalmaceneslibertad2Model.destino" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdalmaceneslibertad2Model.detalleentrada" Width="1.5" PointX="7.5" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdalmaceneslibertad2Model.detallesalida" Width="1.5" PointX="7.5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdalmaceneslibertad2Model.distrito" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdalmaceneslibertad2Model.empleado" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdalmaceneslibertad2Model.marca" Width="1.5" PointX="3" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdalmaceneslibertad2Model.producto" Width="1.5" PointX="5.25" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdalmaceneslibertad2Model.proveedor" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdalmaceneslibertad2Model.registroentrada" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdalmaceneslibertad2Model.registrosalida" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdalmaceneslibertad2Model.rol" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdalmaceneslibertad2Model.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdalmaceneslibertad2Model.tipodocumento" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <AssociationConnector Association="bdalmaceneslibertad2Model.FK__producto__codcat__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="bdalmaceneslibertad2Model.FK__registros__codde__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="bdalmaceneslibertad2Model.FK__detalleen__codpr__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="bdalmaceneslibertad2Model.FK__detalleen__nroen__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="bdalmaceneslibertad2Model.FK__detallesa__codpr__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="bdalmaceneslibertad2Model.FK__detallesa__nrosa__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="bdalmaceneslibertad2Model.FK__empleado__coddis__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="bdalmaceneslibertad2Model.FK__proveedor__coddi__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="bdalmaceneslibertad2Model.FK__empleado__codrol__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="bdalmaceneslibertad2Model.FK__empleado__codtip__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="bdalmaceneslibertad2Model.FK__registroe__codem__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="bdalmaceneslibertad2Model.FK__registros__codem__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="bdalmaceneslibertad2Model.FK__producto__codmar__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="bdalmaceneslibertad2Model.FK__registroe__codpr__4F7CD00D" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

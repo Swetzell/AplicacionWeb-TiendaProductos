@@ -1,0 +1,80 @@
+﻿@model AplicacionWeb.producto
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>producto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nompro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nompro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.despro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.despro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prepro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prepro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.canpro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.canpro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estpro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estpro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.categoria.nomcat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.categoria.nomcat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.marca.nommar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.marca.nommar)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
