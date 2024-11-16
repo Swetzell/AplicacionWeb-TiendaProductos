@@ -1,0 +1,100 @@
+﻿@model IEnumerable<AplicacionWeb.producto>
+
+@{
+    //cambiando el titulo de la pagina web
+    ViewBag.Title = "Mantenimiento Producto";
+}
+
+@*cambiando el nombe del titulo*@
+<h2>Mantenimiento Producto</h2>
+
+
+<p>
+    @Html.ActionLink("Nuevo Producto", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>Codigo</th>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.nompro)*@
+                    Nombre
+                </th>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.despro)*@
+                    Descripcion
+                </th>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.prepro)*@
+                    Precio
+                </th>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.canpro)*@
+                    Cantidad
+                </th>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.estpro)*@
+                    Estado
+                </th>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.categoria.nomcat)*@
+                    Categoria
+                </th>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.marca.nommar)*@
+                    Marca
+                </th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.codpro)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nompro)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.despro)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.prepro)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.canpro)
+                    </td>
+                    <td>
+                        @*@Html.DisplayFor(modelItem => item.estpro)*@
+                        @if (item.estpro)
+                        {
+
+
+                            <span>Habilitado</span>
+                        }
+                        else
+                        {
+                            <span>Desabilitado</span>
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.categoria.nomcat)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.marca.nommar)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Actualizar", "Edit", new { id = item.codpro }, new { @class = "btn btn-success" })
+                    </td>
+                    <td>@Html.ActionLink("Detalles", "Details", new { id = item.codpro }, new { @class = "btn btn-secondary" })</td>
+                    <td>@Html.ActionLink("Eliminar", "Delete", new { id = item.codpro }, new { @class = "btn btn-danger" })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

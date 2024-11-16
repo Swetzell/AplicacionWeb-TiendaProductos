@@ -1,0 +1,114 @@
+﻿@model AplicacionWeb.empleado
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>empleado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nomemp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomemp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apepemp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apepemp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apememp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apememp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.docemp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.docemp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.diremp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.diremp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telemp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telemp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.celemp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.celemp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.coremp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.coremp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estemp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estemp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.distrito.nomdis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.distrito.nomdis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rol.nomrol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rol.nomrol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipodocumento.nomtipd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipodocumento.nomtipd)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.codemp }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

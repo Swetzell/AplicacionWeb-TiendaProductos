@@ -1,0 +1,50 @@
+﻿@model AplicacionWeb.registroentrada
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>registroentrada</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fecent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empleado.nomemp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empleado.nomemp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.proveedor.nomprov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.proveedor.nomprov)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.nroent }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

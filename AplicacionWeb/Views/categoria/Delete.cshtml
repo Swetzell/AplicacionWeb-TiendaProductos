@@ -1,0 +1,59 @@
+﻿@model AplicacionWeb.categoria
+
+@{
+    ViewBag.Title = "Mantenimiento de Categoria";
+}
+<div class="card">
+    <div class="card-header text-center">
+        <h2>Eliminar Categoria</h2>
+    </div>
+    <div class="card-body">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <h3>¿Estas seguro que quieres eliminar la categoria?</h3>
+                <div>
+                    <h4>Categoria</h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @*@Html.DisplayNameFor(model => model.nomcat)*@
+                            Nombre:
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.nomcat)
+                        </dd>
+
+                        <dt>
+                            @*@Html.DisplayNameFor(model => model.estcat)*@
+                            Estado:
+                        </dt>
+
+                        <dd>
+                            @{
+                                var estado = Model.estcat ? "Habilitado" : "Deshabilitado";
+                            }
+                            @estado
+                        </dd>
+
+                    </dl>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Delete" class="btn btn-danger" />
+
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer text-body-secondary">
+        <div>
+            @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-secondary" })
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<AplicacionWeb.registroentrada>
+
+@{
+    ViewBag.Title = "Mantenimiento Registro de Entrada";
+}
+
+<h2>Mantenimiento Registro de Entrada</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Registro de Entrada", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>Fecha de Entrada</th>
+                <th>Estado de Entrada</th>
+                <th>Empleado</th>
+                <th>Proveedor</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.fecent)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.estent)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.empleado.nomemp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.proveedor.nomprov)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Actualizar", "Edit", new { id = item.nroent }, new { @class = "btn btn-success" })
+                    </td>
+                    <td>@Html.ActionLink("Detalles", "Details", new { id = item.nroent }, new { @class = "btn btn-secondary" })</td>
+                    <td>@Html.ActionLink("Eliminar", "Delete", new { id = item.nroent }, new { @class = "btn btn-danger" })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

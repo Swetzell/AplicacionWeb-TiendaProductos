@@ -1,0 +1,117 @@
+﻿@*cambiamos la obtencion del modelo para PagedList*@
+@model PagedList.IPagedList<AplicacionWeb.rol>
+@*agregamos la importacion del PagedList*@
+@using PagedList.Mvc;
+
+@{
+    //cambiando el titulo de la pagina web
+    ViewBag.Title = "Mantenimiento Rol";
+}
+
+@*cambiando el nombe del titulo*@
+<h2>Mantenimiento Rol</h2>
+
+<p>
+    @*cambiando el nombre del link de registro*@
+    @Html.ActionLink("Nuevo Rol", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.codrol)*@
+                    Codigo
+                </th>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.nomrol)*@
+                    Nombre
+                </th>
+                <th>Estado</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.codrol)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nomrol)
+                    </td>
+                    <td>
+                        @*@Html.DisplayFor(modelItem => item.estrol)*@
+                        @if (item.estrol)
+                        {
+                            <span>Habilitado</span>
+                        }
+                        else
+                        {
+                            <span>Deshabilitado</span>
+                        }
+                    </td>
+                    <td>
+                        @Html.ActionLink("Actualizar", "Edit", new { id = item.codrol }, new { @class = "btn btn-success" })
+                    </td>
+                    <td>@Html.ActionLink("Detalles", "Details", new { id = item.codrol }, new { @class = "btn btn-secondary" })</td>
+                    <td>@Html.ActionLink("Eliminar", "Delete", new { id = item.codrol }, new { @class = "btn btn-danger" })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            @*Para el boton anterior*@
+            @if (Model.HasPreviousPage)
+            {
+                <li class="page-item">
+                    <a class="page-link"
+                       href="@Url.Action("Index", new {page=Model.PageNumber-1})">
+                        Anterior
+                    </a>
+                </li>
+            }
+            else
+            {
+                <li class="page-item disabled"><span class="page-link">Anterior</span></li>
+            }
+
+            @for (int i = 1; i <= Model.PageCount; i++)
+            {
+                if (i == Model.PageNumber)
+                {
+                    <li class="page-item"><span class="page-link">@i</span></li>
+                }
+                else
+                {
+                    <li class="page-item">
+                        <a class="page-link"
+                           href="@Url.Action("Index", new {page=i})">
+                            @i
+                        </a>
+                    </li>
+                }
+            }
+
+            @*Para el boton siguiente*@
+            @if (Model.HasNextPage)
+            {
+                <li class="page-item">
+                    <a class="page-link"
+                       href="@Url.Action("Index", new {page=Model.PageNumber+1})">
+                        Siguiente
+                    </a>
+                </li>
+            }
+            else
+            {
+                <li class="page-item disabled"><span class="page-link">Siguiente</span></li>
+            }
+        </ul>
+    </nav>
+</div>
+

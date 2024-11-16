@@ -1,0 +1,82 @@
+﻿@model AplicacionWeb.proveedor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>proveedor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nomprov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomprov)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.repprov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.repprov)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dirprov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dirprov)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telprov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telprov)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.celprov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.celprov)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.corprov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.corprov)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estprov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estprov)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.distrito.nomdis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.distrito.nomdis)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.codprov }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

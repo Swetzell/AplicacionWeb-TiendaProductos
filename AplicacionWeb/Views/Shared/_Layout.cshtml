@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+        <div class="container">
+            @Html.ActionLink("Aplicacion Web", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li>@Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Acerca", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Contactanos", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    @*agregando mas opciones al menu principal*@
+                    <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Mantenimiento Simple
+    </a>
+    <ul class="dropdown-menu dropdown-menu-dark">
+        <li>@Html.ActionLink("Categoria", "Index", "categoria", new { area = "" }, new { @class = "dropdown-item" })</li>
+        <li>@Html.ActionLink("Marca", "Index", "marca", new { area = "" }, new { @class = "dropdown-item" })</li>
+        <li>@Html.ActionLink("Distrito", "Index", "distrito", new { area = "" }, new { @class = "dropdown-item" })</li>
+        <li>@Html.ActionLink("Rol", "Index", "rol", new { area = "" }, new { @class = "dropdown-item" })</li>
+        <li>@Html.ActionLink("TipoDocumento", "Index", "tipodocumento", new { area = "" }, new { @class = "dropdown-item" })</li>
+        <li>@Html.ActionLink("Destino", "Index", "destino", new { area = "" }, new { @class = "dropdown-item" })</li>
+    </ul>
+</li>
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Mantenimiento Doble
+    </a>
+    <ul class="dropdown-menu dropdown-menu-dark">
+        <li>@Html.ActionLink("Producto", "Index", "producto", new { area = "" }, new { @class = "dropdown-item" })</li>
+        <li>@Html.ActionLink("Proveedor", "Index", "proveedor", new { area = "" }, new { @class = "dropdown-item" })</li>
+        <li>@Html.ActionLink("Empleado", "Index", "empleado", new { area = "" }, new { @class = "dropdown-item" })</li>
+        <li>@Html.ActionLink("RegistroEntrada", "Index", "registroentrada", new { area = "" }, new { @class = "dropdown-item" })</li>
+        <li>@Html.ActionLink("DetalleEntrada", "Index", "detalleentrada", new { area = "" }, new { @class = "dropdown-item" })</li>
+        <li>@Html.ActionLink("RegistroSalida", "Index", "registrosalida", new { area = "" }, new { @class = "dropdown-item" })</li>
+        <li>@Html.ActionLink("DetalleSalida", "Index", "detallesalida", new { area = "" }, new { @class = "dropdown-item" })</li>
+    </ul>
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
